@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 const fs = require('node:fs');
+const path = require('node:path');
+const os = require('node:os');
+const dataPath = path.join(os.homedir(),'tasker','info.json');
 const command = process.argv[2];
 if (!command) {
   console.log("INVALID USAGE\nUsage:\nnode main.js <command> (name)");
@@ -15,7 +18,7 @@ if (command !== 'list' && command !== 'help') {
   }
 }
 let id = 0;
-let data = JSON.parse(fs.readFileSync('info.json','utf8'));
+let data = JSON.parse(fs.readFileSync(dataPath,'utf8'));
 let lastId = -1;
 for (let i = 0; i < data.tasks.length; i++) {
   const task = data.tasks[i];

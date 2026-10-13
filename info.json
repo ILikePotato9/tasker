@@ -1,8 +1,13 @@
 {
   "tasks": [
     {
-      "name": "test",
+      "name": "update_github_page_for_tasker",
       "id": 0,
+      "status": false
+    },
+    {
+      "name": "get_myimaths_user_and_pass",
+      "id": 1,
       "status": false
     }
   ]

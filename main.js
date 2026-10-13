@@ -43,7 +43,7 @@ switch (command) {
       lastId += 1;
       data.tasks[lastId] = {"name":name,"id":lastId,"status":false};
       console.log(`Added ${name}`);
-      fs.writeFileSync('info.json',JSON.stringify(data,null,2));
+      fs.writeFileSync(dataPath,JSON.stringify(data,null,2));
       nameList.push(name);
     }
     break;
@@ -64,7 +64,7 @@ switch (command) {
       for (let i = 0; i < data.tasks.length; i++) {
         data.tasks[i].id = i;
       }
-      fs.writeFileSync('info.json',JSON.stringify(data,null,2));
+      fs.writeFileSync(dataPath,JSON.stringify(data,null,2));
     }
     break
   case 'tick':
@@ -81,7 +81,7 @@ switch (command) {
           break
         }
       }
-      fs.writeFileSync('info.json',JSON.stringify(data,null,2));
+      fs.writeFileSync(dataPath,JSON.stringify(data,null,2));
     }
     break
   default:
